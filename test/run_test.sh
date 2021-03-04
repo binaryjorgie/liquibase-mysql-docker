@@ -7,5 +7,5 @@ until nc -z -v -w 10 db 3306; do
 done
 
 echo "Applying changelog"
-liquibase --changeLogFile=/opt/test_liquibase_mysql/changelog.xml updateTestingRollback
+liquibase --changeLogFile=changelog.xml updateTestingRollback
 
