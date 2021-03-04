@@ -2,7 +2,7 @@ FROM jminning/liquibase
 
 
 ARG jdbc_driver_version
-ENV jdbc_driver_version=${jdbc_driver_version:-5.1.45}\
+ENV jdbc_driver_version=${jdbc_driver_version:-8.0.23}\
     jdbc_driver_download_url=https://dev.mysql.com/get/Downloads/Connector-J\
     LIQUIBASE_PORT=${LIQUIBASE_PORT:-3306}\
     LIQUIBASE_CLASSPATH=${LIQUIBASE_CLASSPATH:-/opt/jdbc/mysql-jdbc.jar:/opt/test_liquibase_mysql/}\
@@ -17,7 +17,7 @@ RUN set -x -e -o pipefail;\
     tarfile=mysql-connector-java-${jdbc_driver_version}.tar.gz;\
     curl -SOLs ${jdbc_driver_download_url}/${tarfile};\
     tar -x -f ${tarfile};\
-    jarfile=mysql-connector-java-${jdbc_driver_version}-bin.jar;\
+    jarfile=mysql-connector-java-${jdbc_driver_version}.jar;\
     mv mysql-connector-java-${jdbc_driver_version}/${jarfile} ./;\
     rm -rf ${tarfile} mysql-connector-java-${jdbc_driver_version};\
     ln -s ${jarfile} mysql-jdbc.jar;
