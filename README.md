@@ -1,13 +1,8 @@
 # liquibase-mysql-docker
 
-[![](https://images.microbadger.com/badges/image/kilna/liquibase-mysql.svg)](https://microbadger.com/images/kilna/liquibase-mysql)
-[![](https://img.shields.io/docker/pulls/kilna/liquibase-mysql.svg?style=plastic)](https://hub.docker.com/r/kilna/liquibase-mysql/)
-[![](https://img.shields.io/docker/stars/kilna/liquibase-mysql.svg?style=plastic)](https://hub.docker.com/r/kilna/liquibase-mysql/)
-[![](https://img.shields.io/badge/docker_build-automated-blue.svg?style=plastic)](https://cloud.docker.com/swarm/kilna/repository/docker/kilna/liquibase-mysql/builds)
-
 **A lightweight Docker for running [Liquibase](https://www.liquibase.org) with [MySQL](http://www.mysql.com) databases**
 
-DockerHub: [liquibase-mysql](https://hub.docker.com/r/kilna/liquibase-mysql/) - GitHub: [liquibase-mysql-docker](https://github.com/kilna/liquibase-mysql-docker)
+DockerHub: [liquibase-mysql](https://hub.docker.com/r/jminning/liquibase-mysql/) - GitHub: [liquibase-mysql-docker](https://github.com/jimminning/liquibase-mysql-docker)
 
 # Usage
 
@@ -16,7 +11,7 @@ DockerHub: [liquibase-mysql](https://hub.docker.com/r/kilna/liquibase-mysql/) - 
 You can use this image by creating your own `Dockerfile` which inherits using a FROM line:
 
 ```
-FROM kilna/liquibase-mysql
+FROM jminning/liquibase-mysql
 ENV LIQUIBASE_HOST=database.server
 ENV LIQUIBASE_DATABASE=dbname
 ENV LIQUIBASE_USERNAME=user
@@ -47,7 +42,7 @@ appropriate to your database like so... where _/local/path/to/changelog/_ is the
 
 ```
 $ docker run -e LIQUIBASE_HOST=database.server -e LIQUIBASE_USERNAME=user -e LIQUIBASE_PASSWORD=pass \
-    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ kilna/liquibase-mysql \
+    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ jminning/liquibase-mysql \
     liquibase updateTestingRollback
 ```
 
