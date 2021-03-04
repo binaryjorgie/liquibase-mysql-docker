@@ -1,5 +1,5 @@
-FROM kilna/liquibase
-LABEL maintainer="Kilna kilna@kilna.com"
+FROM jminning/liquibase
+
 
 ARG jdbc_driver_version
 ENV jdbc_driver_version=${jdbc_driver_version:-5.1.45}\
