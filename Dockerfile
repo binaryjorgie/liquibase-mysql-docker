@@ -6,7 +6,7 @@ ENV jdbc_driver_version=${jdbc_driver_version:-8.0.23}\
     jdbc_driver_download_url=https://dev.mysql.com/get/Downloads/Connector-J\
     LIQUIBASE_PORT=${LIQUIBASE_PORT:-3306}\
     LIQUIBASE_CLASSPATH=${LIQUIBASE_CLASSPATH:-/opt/jdbc/mysql-jdbc.jar:/opt/test_liquibase_mysql/}\
-    LIQUIBASE_DRIVER=${LIQUIBASE_DRIVER:-com.mysql.jdbc.Driver}\
+    LIQUIBASE_DRIVER=${LIQUIBASE_DRIVER:-com.mysql.cj.jdbc.Driver}\
     LIQUIBASE_URL=${LIQUIBASE_URL:-'jdbc:mysql://${HOST}:${PORT}/${DATABASE}'}
 
 COPY test/ /opt/test_liquibase_mysql/
