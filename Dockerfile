@@ -1,4 +1,4 @@
-FROM jminning/liquibase
+FROM mattjorgensen4im/liquibase
 
 
 ARG jdbc_driver_version
