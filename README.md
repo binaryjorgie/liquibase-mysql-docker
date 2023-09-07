@@ -2,7 +2,7 @@
 
 **A lightweight Docker for running [Liquibase](https://www.liquibase.org) with [MySQL](http://www.mysql.com) databases**
 
-DockerHub: [liquibase-mysql](https://hub.docker.com/r/jminning/liquibase-mysql/) - GitHub: [liquibase-mysql-docker](https://github.com/jimminning/liquibase-mysql-docker)
+DockerHub: [liquibase-mysql](https://hub.docker.com/r/mattjorgensen4im/liquibase-mysql/) - GitHub: [liquibase-mysql-docker](https://github.com/binaryjorgie/liquibase-mysql-docker)
 
 # Usage
 
@@ -11,7 +11,7 @@ DockerHub: [liquibase-mysql](https://hub.docker.com/r/jminning/liquibase-mysql/)
 You can use this image by creating your own `Dockerfile` which inherits using a FROM line:
 
 ```
-FROM jminning/liquibase-mysql
+FROM mattjorgensen4im/liquibase-mysql
 ENV LIQUIBASE_HOST=database.server
 ENV LIQUIBASE_DATABASE=dbname
 ENV LIQUIBASE_USERNAME=user
@@ -42,7 +42,7 @@ appropriate to your database like so... where _/local/path/to/changelog/_ is the
 
 ```
 $ docker run -e LIQUIBASE_HOST=database.server -e LIQUIBASE_USERNAME=user -e LIQUIBASE_PASSWORD=pass \
-    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ jminning/liquibase-mysql \
+    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ mattjorgensen4im/liquibase-mysql \
     liquibase updateTestingRollback
 ```
 
