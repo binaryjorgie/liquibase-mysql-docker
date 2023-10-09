@@ -73,4 +73,3 @@ If you want to see what the contents of the generated _liquibase.properties_ fil
 ```
 $ docker run image-name cat liquibase.properties
 ```
-
