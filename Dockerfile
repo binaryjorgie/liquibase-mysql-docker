@@ -1,5 +1,6 @@
 FROM liquibase/liquibase:latest
 
+USER root
 
 ARG jdbc_driver_version
 ENV jdbc_driver_version=${jdbc_driver_version:-8.0.23}\
@@ -10,9 +11,9 @@ ENV jdbc_driver_version=${jdbc_driver_version:-8.0.23}\
     LIQUIBASE_URL=${LIQUIBASE_URL:-'jdbc:mysql://${HOST}:${PORT}/${DATABASE}'}
 
 COPY test/ /opt/test_liquibase_mysql/
-RUN set -x -e -o pipefail;\
+RUN set -x -e;\
     echo "JDBC DRIVER VERSION: $jdbc_driver_version";\
-    chmod +x /opt/test_liquibase_mysql/run_test.sh;\
+    mkdir /opt/jdbc;\
     cd /opt/jdbc;\
     tarfile=mysql-connector-java-${jdbc_driver_version}.tar.gz;\
     curl -SOLs ${jdbc_driver_download_url}/${tarfile};\
