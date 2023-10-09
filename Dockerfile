@@ -1,4 +1,4 @@
-FROM mattjorgensen4im/liquibase
+FROM liquibase/liquibase:latest
 
 
 ARG jdbc_driver_version
